@@ -10,7 +10,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 
-export const Route = createFileRoute("/cars")({
+export const Route = createFileRoute("/cars/")({
   validateSearch: z.object({ location: z.string().optional() }),
   head: () => ({ meta: [{ title: "Browse Rental Cars — SmartRide" },{ name: "description", content: "Compare SmartRide SUVs, sedans, and sports cars with clear daily rates." },{ property: "og:title", content: "Browse Rental Cars — SmartRide" },{ property: "og:description", content: "Find the right rental car for your next journey." },{ property: "og:type", content: "website" },{ name: "twitter:card", content: "summary_large_image" }] }), component: CarsPage,
 });
