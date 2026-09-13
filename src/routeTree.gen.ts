@@ -36,9 +36,9 @@ const CarsIndexRoute = CarsIndexRouteImport.update({
   getParentRoute: () => rootRouteImport,
 } as any)
 const CarsCarIdRoute = CarsCarIdRouteImport.update({
-  id: '/$carId',
-  path: '/$carId',
-  getParentRoute: () => CarsRoute,
+  id: '/cars/$carId',
+  path: '/cars/$carId',
+  getParentRoute: () => rootRouteImport,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -75,6 +75,7 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LoginRoute: typeof LoginRoute
   RegisterRoute: typeof RegisterRoute
+  CarsCarIdRoute: typeof CarsCarIdRoute
   CarsIndexRoute: typeof CarsIndexRoute
 }
 
@@ -110,10 +111,10 @@ declare module '@tanstack/react-router' {
     }
     '/cars/$carId': {
       id: '/cars/$carId'
-      path: '/$carId'
+      path: '/cars/$carId'
       fullPath: '/cars/$carId'
       preLoaderRoute: typeof CarsCarIdRouteImport
-      parentRoute: typeof CarsRoute
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -122,6 +123,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LoginRoute: LoginRoute,
   RegisterRoute: RegisterRoute,
+  CarsCarIdRoute: CarsCarIdRoute,
   CarsIndexRoute: CarsIndexRoute,
 }
 export const routeTree = rootRouteImport
