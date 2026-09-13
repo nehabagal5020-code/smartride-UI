@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { AuthPage } from "@/components/auth-page";
+export const Route = createFileRoute("/register")({ head:()=>({meta:[{title:"Create Account — SmartRide"},{name:"description",content:"Create a SmartRide account and book your next car."},{property:"og:title",content:"Create Account — SmartRide"},{property:"og:description",content:"Join SmartRide and start booking better drives."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:()=> <AuthPage mode="register"/> });
